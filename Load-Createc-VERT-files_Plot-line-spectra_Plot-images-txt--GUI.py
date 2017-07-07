@@ -41,7 +41,7 @@ from scipy.optimize import curve_fit as cv
 fontna=16
 fontnu=12
 
-totalfig = Figure(figsize=(12,6), dpi=100, tight_layout=True)
+totalfig = Figure(figsize=(10,5), dpi=100, tight_layout=True)
 aplot = totalfig.add_subplot(121)
 bplot = totalfig.add_subplot(122)
 
@@ -337,28 +337,28 @@ class PageThree(tk.Frame):
 		self.widget.grid(row=2,columnspan=4)
 		
 		#Sliders for contrast
-		sluima=tk.Scale(self, from_=untenima-(mitteima-untenima), to=obenima,resolution=0.01,variable=self.imau,command=self.update_imau,orient=tk.HORIZONTAL)
+		sluima=tk.Scale(self, from_=untenima-(mitteima-untenima), to=obenima,resolution=0.01,variable=self.imau,command=self.update_imau,orient=tk.HORIZONTAL, length=300, width=15)
 		sluima.set(untenima)
 		sluima.grid(row=3,column=1)
 		
 		labeliu=tk.Label(self, text='Lower value image')
 		labeliu.grid(row=3,column=0)
 		
-		sloima=tk.Scale(self, from_=untenima, to=obenima+(obenima-mitteima),resolution=0.01,variable=self.imao,command=self.update_imao,orient=tk.HORIZONTAL)
+		sloima=tk.Scale(self, from_=untenima, to=obenima+(obenima-mitteima),resolution=0.01,variable=self.imao,command=self.update_imao,orient=tk.HORIZONTAL, length=300, width=15)
 		sloima.set(obenima)
 		sloima.grid(row=4,column=1)
 		
 		labelio=tk.Label(self, text='Upper value image')
 		labelio.grid(row=4,column=0)
 		
-		slusp=tk.Scale(self, from_=untensp-(mittesp-untensp), to=obensp,resolution=0.01,variable=self.spu,command=self.update_spu,orient=tk.HORIZONTAL)
+		slusp=tk.Scale(self, from_=untensp-(mittesp-untensp), to=obensp,resolution=0.01,variable=self.spu,command=self.update_spu,orient=tk.HORIZONTAL, length=300, width=15)
 		slusp.set(untensp)
 		slusp.grid(row=3,column=3)
 		
 		labelsu=tk.Label(self, text='Lower value spectra')
 		labelsu.grid(row=3,column=2)
 		
-		slosp=tk.Scale(self, from_=untensp, to=obensp+(obensp-mittesp),resolution=0.,variable=self.spo,command=self.update_spo,orient=tk.HORIZONTAL)
+		slosp=tk.Scale(self, from_=untensp, to=obensp+(obensp-mittesp),resolution=0.,variable=self.spo,command=self.update_spo,orient=tk.HORIZONTAL, length=300, width=15)
 		slosp.set(obensp)
 		slosp.grid(row=4,column=3)
 		
