@@ -21,7 +21,7 @@ contrast_topo='viridis'
 ### Choose scalebar length in nm ###
 scalebar_length=5
 ### Average # points of spectra ###
-average_spec=5
+average_specs=5
 ################################
 
 import matplotlib
@@ -77,7 +77,7 @@ class PageThree(tk.Frame):
 		choicesIma.sort()
 		self.variableIma = tk.StringVar(self)
 		self.variableIma.set(choicesIma[0])
-		wIma = ttk.Combobox(self, textvariable=self.variableIma, values=choicesIma)
+		wIma = ttk.Combobox(self, textvariable=self.variableIma, values=choicesIma, width=25)
 		wIma.grid(row=0,column=1,sticky='w')
 		
 		#Choose file of spectra along line (.L*.VERT) (only first spectrum is displayed
@@ -86,15 +86,15 @@ class PageThree(tk.Frame):
 		choicesSpec.sort()
 		self.variableSpec = tk.StringVar(self)
 		self.variableSpec.set(choicesSpec[0])
-		wSpec = ttk.Combobox(self, textvariable=self.variableSpec, values=choicesSpec)
+		wSpec = ttk.Combobox(self, textvariable=self.variableSpec, values=choicesSpec, width=25)
 		wSpec.grid(row=1,column=1,sticky='w')
 		
 		#Load data button
-		loadbuttonIma=tk.Button(self,text='Load',command=self.plotimage,anchor=tk.W)
+		loadbuttonIma=tk.Button(self,text='Load',command=self.plotimage, width=12)
 		loadbuttonIma.grid(row=0,column=2)
 		
 		#Quit button
-		button = tk.Button(self, text='Quit', command=self._quit)
+		button = tk.Button(self, text='Quit', command=self._quit, width=12)
 		button.grid(row=0,column=3)
 		
 		self.imau = tk.DoubleVar(self)
@@ -366,19 +366,19 @@ class PageThree(tk.Frame):
 		labelso.grid(row=4,column=2)
 		
 		#Save contrast button
-		buttonsav = tk.Button(self, text="Save contrast", command=self.sel)
+		buttonsav = tk.Button(self, text="Save contrast", command=self.sel, width=12)
 		buttonsav.grid(row=3,column=8)
 		
 		#Old contrast button
-		buttonoc = tk.Button(self, text="Old contrast", command=self.ocon)
+		buttonoc = tk.Button(self, text="Old contrast", command=self.ocon, width=12)
 		buttonoc.grid(row=4,column=8)
 		
 		#Save image button
-		buttonsavima = tk.Button(self, text="Save image", command=self.saveima)
+		buttonsavima = tk.Button(self, text="Save image", command=self.saveima, width=12)
 		buttonsavima.grid(row=1,column=2)
 		
 		#Reset contrast button
-		buttonres = tk.Button(self, text='Reset', command=self.reset)
+		buttonres = tk.Button(self, text='Reset', command=self.reset, width=12)
 		buttonres.grid(row=1,column=3)
 		
 app = SeaofBTCapp()
