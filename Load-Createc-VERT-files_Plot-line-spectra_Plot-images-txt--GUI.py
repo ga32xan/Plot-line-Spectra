@@ -37,6 +37,8 @@ import numpy as np
 import tkinter as tk
 from tkinter import ttk
 from scipy.optimize import curve_fit as cv
+from tkinter import filedialog
+import os as os
 
 fontna=16
 fontnu=12
@@ -44,6 +46,14 @@ fontnu=12
 totalfig = Figure(figsize=(10,5), dpi=100, tight_layout=True)
 aplot = totalfig.add_subplot(121)
 bplot = totalfig.add_subplot(122)
+
+global path
+root = tk.Tk()
+root.withdraw()
+path = filedialog.askdirectory()
+root.destroy()
+
+os.chdir(path)
 
 class SeaofBTCapp(tk.Tk):
 	def __init__(self, *args, **kwargs):
@@ -105,7 +115,7 @@ class PageThree(tk.Frame):
 	def _quit(self):
 		self.quit()
 		self.destroy()
-
+		
 	def string_simplify(self,str):
 		#simplifies a string (i.e. removes replaces space for "_", and makes it lowercase
 		return str.replace(' ','_').lower()
