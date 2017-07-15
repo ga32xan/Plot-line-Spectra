@@ -1,4 +1,4 @@
-### Version 06.07.2017
+### Version 15.07.2017
 ### works on ### Python 3.6.1 -- Matplotlib 2.0.0 -- Numpy 1.12.1 -- Scipy 0.19.0
 ################################
 ### Alexander Riss & Mathias Pörtner : Data loading and header parsing
@@ -11,9 +11,9 @@
 ### Install Anaconda (tested for Anaconda3)
 ### Run an Ipython console with this file
 ################################
-# Copy the script to directory of the data files
 # Edit the topographic image you want to show with gwyddion and save it as ASCII data matrix (.txt) with the option "Add informational header" 
 # Important: Do not trim images, and record them in the same size as u did the spectra on, otherwise thepositions will not match
+# Start the script and choose the directory of your data
 ################################
 ### Chose image color and spectra color ###
 contrast_spec='afmhot'
