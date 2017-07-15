@@ -47,12 +47,10 @@ totalfig = Figure(figsize=(10,5), dpi=100, tight_layout=True)
 aplot = totalfig.add_subplot(121)
 bplot = totalfig.add_subplot(122)
 
-global path
 root = tk.Tk()
 root.withdraw()
 path = filedialog.askdirectory()
 root.destroy()
-
 os.chdir(path)
 
 class SeaofBTCapp(tk.Tk):
@@ -238,13 +236,13 @@ class PageThree(tk.Frame):
 		obenima=self.imao.get()
 		untensp=self.spu.get()
 		obensp=self.spo.get()
-		np.savetxt(self.data_name[:-4]+'.csv',[untenima,obenima,untensp,obensp],delimiter=',')
+		np.savetxt(self.data_name+'.contrast.csv',[untenima,obenima,untensp,obensp],delimiter=',')
 		
 	def saveima(self):
-		totalfig.savefig(self.data_name[:-4]+'.pdf')
+		totalfig.savefig(self.data_name+'.pdf')
 		
 	def ocon(self):
-		con=np.loadtxt(self.data_name[:-4]+'.csv',delimiter=',')
+		con=np.loadtxt(self.data_name+'.contrast.csv',delimiter=',')
 		imagepl.set_clim(vmin=con[0],vmax=con[1])
 		specpl.set_clim(vmin=con[2],vmax=con[3])
 		canvas.show()
